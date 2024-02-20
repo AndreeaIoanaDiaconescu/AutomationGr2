@@ -21,18 +21,24 @@ public class SignInPage extends BasePage {
 
     private By signInButton = By.id("btn1");
     private By logo = By.id("logo");
-    private By emailField = By.xpath("//input[@ng-model='Email']")
+    private By emailField = By.xpath("//input[@ng-model='Email']");
     private By passwordField = By.xpath("//input[@ng-model1='Password']");
     private By enterButton = By.id("enterbtn");
-    private By enterMsg = By.id("errormsg");
-    private By skipSingInButton = By.id("btn2");
+    private By errorMsg = By.id("errormsg");
+    private By skipSignInButton = By.id("btn2");
+    private By signUp = By.id("email");
+    private By registerButton = By.id("enterimg");
 
     public void clickSignInButton() {
         LOG.info("Click 'Sign in' Button");
         driver.findElement(signInButton).click();
     }
+    public boolean isLogoDisplayed() {
+        LOG.info("Verify if Logo image is displayed");
+        return driver.findElement(logo).isDisplayed();
+    }
 
-    public boolean inSignInButtondisplayed() {
+    public boolean inSignInButtonDisplayed() {
         LOG.info("Verify if 'Sign in' button is displayed");
         return driver.findElement(signInButton).isDisplayed();
     }
@@ -49,7 +55,7 @@ public class SignInPage extends BasePage {
 
     public void clickEnterButton() {
         LOG.info("Click 'Enter' button");
-        driver.findElement(enterButton().click();
+        driver.findElement(enterButton).click();
     }
 
     public boolean isErrorMessageDisplayed() {
@@ -66,6 +72,16 @@ public class SignInPage extends BasePage {
         driver.findElement(skipSignInButton).click();
 
     }
+    public void insertEmail(String email) {
+        LOG.info("Insert email address");
+        driver.findElement(signUp).sendKeys(email);
+    }
+    public void clickregisterButton () {
+
+        LOG.info("click register button");
+        driver.findElement(registerButton).click();
+    }
+
 
 }
 

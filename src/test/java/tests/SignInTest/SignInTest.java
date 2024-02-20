@@ -16,7 +16,7 @@ public class SignInTest extends BaseTest {
         String password = "parola";
 
         LOG.info("Check 'Sign in' button");
-        Assert.assertTrue(signInPage.isSignInButtonDisplayed(), "Button is not displayed");
+        Assert.assertTrue(signInPage.inSignInButtonDisplayed(), "Button is not displayed");
 
         LOG.info("Click 'Sign in' button");
         signInPage.clickSignInButton();
@@ -25,7 +25,7 @@ public class SignInTest extends BaseTest {
         Assert.assertTrue(signInPage.isLogoDisplayed(), "Logo is not displayed");
 
         LOG.info("Complete the fields");
-        signInPage.typeInSignInEmailField(email);
+        signInPage.typeInSignInEmalilField(email);
         signInPage.typeInSignInPasswordField(password);
 
         LOG.info("Click Enter and check message");
@@ -37,8 +37,6 @@ public class SignInTest extends BaseTest {
 
         LOG.info("Click 'Skip sign in' button");
         signInPage.clickSkipSignInButton();
-
-
 
     }
 }
