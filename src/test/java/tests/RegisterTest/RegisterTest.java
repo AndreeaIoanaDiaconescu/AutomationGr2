@@ -21,6 +21,7 @@ import static pages.BasePage.*;
         String year = "1991";
         String month = "February";
         String day = "29";
+        String password = "secretPassword";
 
         @Test
         public void fillRegister() {
@@ -60,6 +61,18 @@ import static pages.BasePage.*;
 
             LOG.info("Select date of birth");
             registerPage.setDateOfBirth(year, month, day);
+
+            LOG.info("Set password");
+            registerPage.setPassword(password);
+
+            LOG.info("Click 'Choose File' button");
+            registerPage.chooseFile();
+
+            LOG.info("Click Submit button");
+            registerPage.clickSubmitButton();
+
+            sleep(5000L);
+
         }
 
 }
